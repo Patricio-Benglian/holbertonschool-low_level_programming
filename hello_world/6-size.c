@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	if ("size32" == __FILE__)
+	if ("/tmp/32" == __FILE__)
 	{
 		printf("Size of a char: 1 byte(s)\n");
 		printf("Size of an int: 4 byte(s)\n");
