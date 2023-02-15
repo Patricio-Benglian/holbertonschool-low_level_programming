@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * main - writes the stuff in the quotes
- * puts - outputs the text in the quotes
- * return - halts execution of the function
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
