@@ -1,6 +1,10 @@
 #!/bin/bash
 echo "input filename"
 read filename
-echo "#include <stdio.h>" > $filename
+echo "#include <stdio.h>
+int main(void) 
+{
+
+}" > $filename
 chmod u+x $filename
 vi $filename
