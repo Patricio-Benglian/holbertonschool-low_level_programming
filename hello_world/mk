@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "input filename"
 read filename
-echo "#include <stdio.h>" > $filename
+echo "#!bin/bash" > $filename
 chmod u+x $filename
 vi $filename
