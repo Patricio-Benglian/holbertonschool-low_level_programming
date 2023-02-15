@@ -2,7 +2,7 @@
 echo "input filename"
 read filename
 echo "#include <stdio.h>
-int main(void) 
+int main(void)
 {
 
 }" > $filename
