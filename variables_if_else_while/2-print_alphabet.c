@@ -6,5 +6,10 @@
  */
 int main(void)
 {
-	putchar("%c", [a..z]);
+	char alpha;
+	for (alpha = a; alpha < A; a++)
+	{
+		putchar("%c", alpha);
+	}
+	return (0);
 }
