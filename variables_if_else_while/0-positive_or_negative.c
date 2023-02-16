@@ -5,19 +5,21 @@
  * Return: Always 0 (Success)
  */
 int main(void)
+
 {
 	int n;
 	if (n < 0)
 	{
-		printf("n is negative");
+		printf("%i is negative", n);
 	}
 		else 
 			if (n > 0)
 			{
-				printf("n is positive);
+				printf("%i is positive", n);
 			}
 			else
 			{
-				printf("n is zero");
+				printf("%i is zero", n);
 			}
+		return (0);
 }
