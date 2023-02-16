@@ -6,5 +6,5 @@
  */
 int main(void)
 {
-	putchar([a..z]);
+	putchar("%c", [a..z]);
 }
