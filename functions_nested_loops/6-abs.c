@@ -1,10 +1,10 @@
 #include "main.h"
 /**
  * _abs - computes the absolute value of an int
- * @r: integer to computer
+ * @int:  integer
  * Return: Always 0 (Success)
  */
-int _abs(int r)
+int _abs(int)
 {
 	if (r < 0)
 	{
