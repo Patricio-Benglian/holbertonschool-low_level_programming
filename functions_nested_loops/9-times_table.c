@@ -13,16 +13,24 @@ void times_table(void)
 			prod = (clm * row);
 			if (prod > 9)
 			{
+				if (clm != 0)
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
 				_putchar((prod / 10) + '0');
 				_putchar((prod % 10) + '0');
 			}
 			else
 			{
+				if (clm != 0)
+				{
+					_putchar(',');
+                                        _putchar(' ');
+                                        _putchar(' ');
+				}
 				_putchar(prod + '0');
 			}
-			_putchar(',');
-			_putchar(' ');
-			_putchar(' ');
 		}
 		if (row != 9)
 		{
@@ -30,3 +38,4 @@ void times_table(void)
 		}
 	}
 }
+
