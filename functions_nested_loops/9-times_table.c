@@ -32,7 +32,7 @@ void times_table(void)
 				_putchar(prod + '0');
 			}
 		}
-		if (row != 9)
+		if (row != 10)
 		{
 			_putchar('\n');
 		}
