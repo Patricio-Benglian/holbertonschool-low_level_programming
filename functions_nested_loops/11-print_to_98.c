@@ -4,7 +4,7 @@
  * @n: integer of which we are counting towards 98 from
  * Return: Always 0 (Success)
  */
-int print_to_98(int n)
+void print_to_98(int n)
 {
 	_putchar(n);
 	if (n < 98)
