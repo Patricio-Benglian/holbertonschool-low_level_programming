@@ -7,8 +7,5 @@
  */
 int add(int add1, int add2)
 {
-	int sum;
-
-	_putchar(sum = add1 + add2);
-	return (sum);
+	return (add2 + add2);
 }
