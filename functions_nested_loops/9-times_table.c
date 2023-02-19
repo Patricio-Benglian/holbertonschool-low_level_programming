@@ -26,15 +26,11 @@ void times_table(void)
 				if (clm != 0)
 				{
 					_putchar(',');
-                                        _putchar(' ');
-                                        _putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
 				}
 				_putchar(prod + '0');
 			}
-		}
-		if (row != 9)
-		{
-			_putchar('\n');
 		}
 	}
 }
