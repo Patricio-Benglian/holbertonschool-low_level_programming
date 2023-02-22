@@ -1,2 +1,4 @@
+all: school.c
+
 school.c:
 	echo school.c
