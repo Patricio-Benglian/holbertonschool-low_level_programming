@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "input filename"
+read filename
+echo "#include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+
+}" > $filename
+chmod u+x $filename
+vi $filename
