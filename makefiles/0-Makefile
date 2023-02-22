@@ -1,10 +1,12 @@
-all: school school.c main.h m.h
+all: main.c school.c school
 
 school: school.c
-	echo school.c
+	gcc school.c school
 
-school.c: m.h
-	
-m.h: main.h
+school.c: main.c
+	gcc school.c main.c
 
-main.h:
+main.c: m.h
+	gcc main.c m.h
+
+m.h:
