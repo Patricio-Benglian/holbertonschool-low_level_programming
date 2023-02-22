@@ -1,0 +1,11 @@
+all: school school.c main.c m.h
+
+school: school.c
+	cc $(SRC) -o school
+
+school.c: main.c
+
+main.c: m.h
+
+m.h:
+
