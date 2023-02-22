@@ -2,6 +2,7 @@ CC = gcc
 SRC = school.c main.c
 OBJ = $(wildcard *.o)
 NAME = school
+
 all = school school.c main.c m.h
 
 school: school.o main.o
