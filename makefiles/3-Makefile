@@ -17,4 +17,4 @@ fclean:
 	-${RM} ${OBJ} ${NAME} *~
 
 re: 
-	${CC} ${SRC} -o ${NAME}
+	${CC} ${SRC} ${OBJ} -o ${NAME}
