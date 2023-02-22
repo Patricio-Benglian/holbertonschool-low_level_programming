@@ -1,4 +1,4 @@
-all: school.c school
+all: school.c
 
 school.c: school
 	echo school.c
