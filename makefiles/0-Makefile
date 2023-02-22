@@ -1,12 +1,10 @@
 all: main.c school.c school
 
 school: school.c
-	gcc school.c school
 
 school.c: main.c
-	gcc school.c main.c
 
 main.c: m.h
-	gcc main.c m.h
 
 m.h:
+	touch m.h
