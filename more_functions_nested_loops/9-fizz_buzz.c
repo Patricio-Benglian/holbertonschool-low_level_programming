@@ -2,7 +2,7 @@
 #include "main.h"
 /**
  * main - prints numbers from 1-100 with fizz and buzz intermittently
- * @i: integer that increments to 100
+ * return - returns 0 on failure
  */
 int main(void)
 {
