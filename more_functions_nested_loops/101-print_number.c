@@ -1,13 +1,13 @@
 #include "main.h"
 #include <limits.h>
 /**
- * print_number - prints hte number n
+ * print_number - prints the number n
  * @n: integer
  */
 void print_number(int n)
 {
 	unsigned int num;
-	unsigned int div = 10;
+	unsigned int div = 1000000000;
 	num = n;
 
 	if (n < 0)
@@ -15,18 +15,17 @@ void print_number(int n)
 		_putchar('-');
 		num = -num;
 	}
-	while (div < num)
-	{
-		div = div * 10;
-	}
-	if (num % 10 != 0 || num == 0)
-	{
-	div = div / 10;
-	}
 	while (div > 1)
 	{
-		_putchar((num / div) % 10 + '0');
-		div = div / 10;
+		if ((num / div) % 10 != 0)
+		{
+			_putchar((num / div) % 10 + '0');
+			div = div / 10;
+		}
+		else if (div > 9)
+		{
+			div = div / 10;
+		}
 	}
 	_putchar(num % 10 + '0');
 }
