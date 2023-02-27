@@ -5,8 +5,9 @@
  */
 void print_number(int n)
 {
-	unsigned int num = n;
+	unsigned int num;
 	unsigned int div = 10;
+	num = n;
 
 	if (n < 0)
 	{
@@ -17,7 +18,7 @@ void print_number(int n)
 	{
 		div = div * 10;
 	}
-	if (num % 10 != 0)
+	if (num % 10 != 0 || num == 0)
 	{
 	div = div / 10;
 	}
