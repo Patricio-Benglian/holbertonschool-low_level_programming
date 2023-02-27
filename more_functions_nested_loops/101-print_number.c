@@ -17,7 +17,10 @@ void print_number(int n)
 	{
 		div = div * 10;
 	}
+	if (num % 10 != 0)
+	{
 	div = div / 10;
+	}
 	while (div > 1)
 	{
 		_putchar((num / div) % 10 + '0');
