@@ -9,7 +9,7 @@ int _atoi(char *s)
 {
 	int neg = 0;
 	unsigned int newnum = 0;
-		
+	
 	while (*s > 57 || *s < 48)
 	{
 		if (*s == '-')
