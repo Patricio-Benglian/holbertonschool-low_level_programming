@@ -8,21 +8,22 @@
  */
 char *leet(char *l)
 {
+	char *t = l;
 	int i, n;
 	char aeotl[] = {65, 69, 79, 84, 76};
 	char ctcsu[] = {52, 51, 48, 55, 49};
 
-	for (i = 0; *l; i++)
+	for (i = 0; *t; i++)
 	{
 		for (n = 0; n < 5; n++)
 		{
-			if (*l == aeotl[n] || *l == aeotl[n] + 32)
+			if (*t == aeotl[n] || *t == aeotl[n] + 32)
 			{
-				*l = ctcsu[n];
+				*t = ctcsu[n];
 			}
 		}
 		n = 0;
-		l++;
+		t++;
 	}
 	return (l);
 }
