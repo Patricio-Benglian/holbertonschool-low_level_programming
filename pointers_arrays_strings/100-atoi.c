@@ -9,14 +9,14 @@ int _atoi(char *s)
 {
 	int neg = 0, newnum2 = 0;
 	unsigned int newnum = 0;
-	
+
 	while (*s > 57 || *s < 48)
 	{
-		if (*s == '-')
-		{
-			neg++;
-		}
-		s++;
+	if (*s == '-')
+	{
+		neg++;
+	}
+	s++;
 	}
 	while (*s -'0' >= 0 && *s - '0' <= 9)
 	{
@@ -29,7 +29,7 @@ int _atoi(char *s)
 	}
 	else
 	{
-	newnum2 = newnum;
+		newnum2 = newnum;
 	}
 	return (newnum2);
 }
