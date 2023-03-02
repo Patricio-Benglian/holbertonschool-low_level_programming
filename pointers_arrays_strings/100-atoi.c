@@ -18,7 +18,7 @@ int _atoi(char *s)
 	}
 	s++;
 	}
-	while (*s -'0' >= 0 && *s - '0' <= 9)
+	while (*s - '0' >= 0 && *s - '0' <= 9)
 	{
 		newnum = newnum * 10 + (*s - '0');
 		s++;
