@@ -7,7 +7,7 @@
  */
 int _atoi(char *s)
 {
-	int neg = 0, newnum2 = 0, i =  1;
+	int neg = 0, newnum2 = 0;
 	unsigned int newnum = 0;
 
 	while (*s > 57 || *s < 48)
@@ -18,11 +18,10 @@ int _atoi(char *s)
 	}
 	s++;
 	}
-	while(*s - '0' >= 0 && *s - '0' <= 9 && *s != '\0')
+	while (*s - '0' >= 0 && *s - '0' <= 9)
 	{
 		newnum = newnum * 10 + (*s - '0');
 		s++;
-		i = 0;
 	}
 	if (neg % 2 == 1)
 	{
@@ -31,10 +30,6 @@ int _atoi(char *s)
 	else
 	{
 		newnum2 = newnum;
-	}
-	if (i == 1)
-	{
-		return (0);
 	}
 	return (newnum2);
 }
