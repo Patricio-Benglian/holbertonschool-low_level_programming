@@ -3,12 +3,13 @@
 #include "2-strlen.c"
 /**
  * string_toupper - converts a string to uppercase
+ * @u: string to become uppercase
  * Return: result
  */
 char *string_toupper(char *u)
 {
 	int i, count;
-	
+
 	count = _strlen(u);
 	for (i = 0; i < count; i++)
 	{
