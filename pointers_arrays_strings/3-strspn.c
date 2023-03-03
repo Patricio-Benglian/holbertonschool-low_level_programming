@@ -8,5 +8,13 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	
+	unsigned int i, n, num = 0;
+
+	for (i = 0; *s; i++)
+	{
+		for (n = 0; *accept; n++)
+		{
+			if s[i] = 
+		}
+	}
 }
