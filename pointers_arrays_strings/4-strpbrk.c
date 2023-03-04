@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include "2-strlen.c"
 /**
  * _strpbrk - searches a string for any set of bytes
  * @s: string
@@ -8,9 +9,9 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i, n;
-	
-	for (i = 0; *s; i++)
+	int i, n;
+
+	for (i = 0; i < _strlen(s); i++)
 	{
 		for (n = 0; accept[n]; n++)
 		{
@@ -24,5 +25,5 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
-	return (0);
+	return ('\0');
 }
