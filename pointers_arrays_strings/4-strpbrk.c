@@ -18,6 +18,10 @@ char *_strpbrk(char *s, char *accept)
 			{
 				return (s + i);
 			}
+			if (s[i + 1] == '\0')
+			{
+				return (s + i + 1);
+			}
 		}
 	}
 	return (0);
