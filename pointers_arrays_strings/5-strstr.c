@@ -10,6 +10,10 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i, o;
 
+	if (*needle == "")
+	{
+		return (haystack);
+	}
 	for (i = 0, o = 0; haystack[i]; i++)
 	{
 		if (needle[o] == haystack[i])
