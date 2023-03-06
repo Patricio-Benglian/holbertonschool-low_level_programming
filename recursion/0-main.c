@@ -8,5 +8,6 @@
 int main(void)
 {
     _puts_recursion("Puts with recursion");
+    _puts_recursion("First, solve the problem. Then, write the code");
     return (0);
 }
