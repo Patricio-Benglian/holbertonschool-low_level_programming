@@ -1,1 +1,6 @@
 *-main*
+mkc
+gitsend
+*
+!*.c
+!*.md
