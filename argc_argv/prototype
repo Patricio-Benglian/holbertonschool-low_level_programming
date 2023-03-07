@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "Input prototype"
+read prototype
+echo "$prototype" >> main.h
