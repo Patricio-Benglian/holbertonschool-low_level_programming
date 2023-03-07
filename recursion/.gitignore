@@ -4,3 +4,4 @@ gitsend
 *
 !*.c
 !*.md
+!main.h

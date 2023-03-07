@@ -5,22 +5,20 @@
  * @n: integer
  * Return: Square root or -1 if none is found
  */
+
+int root(int n, int i)
+{	
+	if (n == i * i)
+	{
+		return i;
+	}
+	else
+	{
+		return root(n, i + 1);
+	}
+}
+
 int _sqrt_recursion(int n)
 {
-	int var = 1;
-
-	if (var * var == n)
-	{
-		return (var);
-	}
-	else if (var * var > n)
-	{
-		return (-1);
-	}
-	else if (var * var < n)
-	{
-		var++;
-		_sqrt_recursion(n);
-	}
-	return (0);
+	return root(n, 2);
 }
