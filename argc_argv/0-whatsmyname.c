@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * FileNameIs - prints filename
+ * @argv: argument array
  */
 void FileNameIs(char **argv)
 {
