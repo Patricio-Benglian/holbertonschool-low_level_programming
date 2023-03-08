@@ -1,10 +1,13 @@
 #include <stdio.h>
-#include "main.h"
 /**
- * FileNameIs - prints filename
+ * main - prints filename
+ * @argc: arg count
  * @argv: argument array
+ * Return: always 0
  */
-void FileNameIs(char **argv)
+int main(int argc, char *argv[])
 {
+	(void) argc;
 	printf("%s\n", argv[0]);
+	return (0);
 }

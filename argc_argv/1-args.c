@@ -1,11 +1,10 @@
 #include <stdio.h>
-#include "main.h"
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * print_arg_count - prints amount of arguments
+ * @argc: arg count
  */
-int print_arg_count(int argc, char **argv)
+int print_arg_count(int argc)
 {
-
+	printf("%d\n", argc);
+	return (0);
 }
