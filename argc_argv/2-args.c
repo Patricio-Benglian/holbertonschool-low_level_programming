@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include "main.h"
 /**
  * main - Entry point
- *
+ * @argc: argument count
+ * @argv: argument values
  * Return: Always 0 (Success)
  */
-int print_args(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int i;
 
