@@ -7,14 +7,14 @@
  */
 
 int root(int n, int i)
-{	
+{
 	if (n == i * i)
 	{
 		return (i);
 	}
 	if (i * i < n)
 	{
-		return root(n, i + 1);
+		return (root(n, i + 1));
 	}
 	else
 	{
@@ -38,6 +38,6 @@ int _sqrt_recursion(int n)
 	}
 	else
 	{
-	return root(n, 2);
+		return (root(n, 2));
 	}
 }
