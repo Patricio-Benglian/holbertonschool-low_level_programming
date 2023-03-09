@@ -2,6 +2,8 @@
 #include "main.h"
 /**
  * _sqrt_recursion - returns natural square root of a number
+ * root - calculates the root to be returned by sqrt
+ * @i: integer
  * @n: integer
  * Return: Square root or -1 if none is found
  */
