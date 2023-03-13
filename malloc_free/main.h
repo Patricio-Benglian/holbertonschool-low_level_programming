@@ -48,3 +48,4 @@ int _putchar(char c);
 int root(int n, int i);
 int wildcmp(char *s1, char *s2);
 char *create_array(unsigned int size, char c);
+char *_strdup(char *str);
