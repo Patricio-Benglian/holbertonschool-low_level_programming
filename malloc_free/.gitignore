@@ -1,0 +1,5 @@
+*-main.c
+mkc
+gitsend
+!*.md
+!main.h
