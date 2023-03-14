@@ -12,32 +12,16 @@ char *str_concat(char *s1, char *s2)
 	int l, l2, i, i2; /* var to calc s1 and s2 length, incrementors*/
 	char *cat; /* concatenated string */
 
-	if (s1 == NULL && s2 == NULL) /* if both empty return NULL */
+	if (!s1 && !s2) /* if both empty return NULL */
 		return (NULL);
+	if (!s1)
+		s1 = "";
+	if (!s2)
+		s2 = "";
 	for (l = 0; s1[l]; l++) /* calc len of s1 */
 		;
 	for (l2 = 0; s2[l2]; l2++) /* calc len of s2 */
 		;
-	if (!s1) /* only copies s2 if s1 is empty */
-	{
-		cat = malloc(sizeof(char) * l2 + 1);
-		if (!cat) /* check malloc return */
-			return (NULL);
-		for (i = 0; s2[i];)
-		{	cat[i] = s2[i];
-			i++; }
-		cat[i] = '\0';
-		return (cat); }
-	else if (!s2) /* only copies s1 if s2 is empty */
-	{
-		cat = malloc(sizeof(char) * l + 1);
-		if (!cat)
-			return (NULL);
-		for (i = 0; s1[i];)
-		{	cat[i] = s1[i];
-			i++; }
-		cat[i] = '\0';
-		return (cat); }
 	cat = malloc(sizeof(char) * (l + l2) + 1);
 	if (!cat)
 		return (NULL);
