@@ -18,23 +18,29 @@ char *str_concat(char *s1, char *s2)
 		;
 	for (l2 = 0; s2[l2]; l2++) /* calc len of s2 */
 		;
-	cat = malloc(sizeof(char) * (l + l2) + 1);
-	if (!cat) /* check malloc return */
-		return (NULL);
-	if (s1 == NULL) /* only copies s2 if s1 is empty */
+	if (!s1) /* only copies s2 if s1 is empty */
 	{
+		cat = malloc(sizeof(char) * l2 + 1);
+		if (!cat) /* check malloc return */
+			return (NULL);
 		for (i = 0; s2[i];)
 		{	cat[i] = s2[i];
 			i++; }
 		cat[i] = '\0';
 		return (cat); }
-	else if (s2 == NULL) /* only copies s1 if s2 is empty */
+	else if (!s2) /* only copies s1 if s2 is empty */
 	{
+		cat = malloc(sizeof(char) * l + 1);
+		if (!cat)
+			return (NULL);
 		for (i = 0; s1[i];)
 		{	cat[i] = s1[i];
 			i++; }
 		cat[i] = '\0';
 		return (cat); }
+	cat = malloc(sizeof(char) * (l + l2) + 1);
+	if (!cat)
+		return (NULL);
 	for (i = 0; s1[i];) /* copies s1 */
 	{	cat[i] = s1[i];
 		i++; }
@@ -43,5 +49,4 @@ char *str_concat(char *s1, char *s2)
 	{	cat[i2] = s2[i]; }
 	cat[i2 + 1] = '\0';
 	return (cat);
-	/* bracket formating is ugly because of 40 line limit with betty */
 }
