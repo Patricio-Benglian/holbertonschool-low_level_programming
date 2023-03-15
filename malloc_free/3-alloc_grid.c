@@ -15,7 +15,12 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	array = malloc(sizeof(int) * height); /* allo mem for dimensions */
 	for (i = 0; i < width; i++)
+	{
 		array[i] = malloc(sizeof(int) * width);
+		if (!array[i])
+			return (NULL);
+	}
+
 	if (!array) /* mem check */
 		return (NULL);
 	/* set all values in array to 0 */
