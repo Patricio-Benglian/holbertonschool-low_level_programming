@@ -14,7 +14,7 @@ void free_grid(int **grid, int height)
 	/* loops through each row of the grid and deallocates mem */
 	for (i = 0; i < height; i++)
 	{
-		free(a[i]);
+		free(grid[i]);
 	}
-	free(a);
+	free(grid);
 }
