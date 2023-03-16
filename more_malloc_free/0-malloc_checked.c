@@ -15,7 +15,7 @@ void *malloc_checked(unsigned int b)
 
 	/* memory check */
 	if (!pt2mem)
-		return(98);
+		void exit(98);
 
 	return (pt2mem);
 }
