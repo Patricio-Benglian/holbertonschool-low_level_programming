@@ -39,6 +39,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		for (i2 = i, i = 0; s2[i]; i++, i2++)
 			cat[i2] = s2[i];
 	/* adds null at end of string */
-	cat[i2 + 1] = '\0';
+	cat[i2] = '\0';
 	return (cat);
 }
