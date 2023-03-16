@@ -10,7 +10,7 @@
 int *array_range(int min, int max)
 {
 	int *array, i, n; /* arr, loop iterator, n++ from min to max */
-	
+
 	if (min > max)
 		return (NULL);
 	/* allocate memory for array */
