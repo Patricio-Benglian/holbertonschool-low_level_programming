@@ -2,9 +2,8 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * print_name - prints file name
- *
- * Return: file name
+ * main - prints file name
+ * Return: 0
  */
 int main(void)
 {
