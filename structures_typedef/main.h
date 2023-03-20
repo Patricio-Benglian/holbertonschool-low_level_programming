@@ -72,3 +72,4 @@ test;
 test int main;
 test;
 test;
+void print_dog(struct dog *d);
