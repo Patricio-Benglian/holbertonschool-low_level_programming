@@ -14,12 +14,6 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 	struct dog;
 
 	d->name = name;
-	if (!name)
-		return (NULL);
 	d->age = age;
-	if (!age)
-		return (NULL);
 	d->owner = owner;
-	if (!owner)
-		return (NULL);
 }
