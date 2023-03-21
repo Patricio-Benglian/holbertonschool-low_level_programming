@@ -3,6 +3,26 @@
 #include "dog.h"
 #include "main.h"
 
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * _strlen - returns the length of a string
+ * @s: string
+ * Return: returns count
+ */
+int _strlen(char *s)
+{
+	int count = 0;
+
+	while (*s != '\0')
+	{
+		s++;
+		count++;
+	}
+	return (count);
+}
+
 /**
  * *_strcpy - copies string pointed to by src
  * @dest: recieved output of src
@@ -44,34 +64,31 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(doggy);
 		return (NULL);
 	}
+
 	/* allocate memory for doggy name. need to for strcpy idk why */
-	doggy->name = malloc(sizeof(name));
+	doggy->name = malloc(sizeof(char) * (_strlen(name) + 1)); /* +1 for null value at end */
 	if (!doggy->name)
 	{
-		free(doggy->name);
+		free(doggy);
 		return (NULL);
 	}
 	/* set doggy's name while making a copy? or something? i dont know */
 	_strcpy(doggy->name, name);
+
 	/* set doggy's age */
 	doggy->age = age;
+
 	/* allo memory for doggy owner. need to for strcpy idk why */
-	doggy->owner = malloc(sizeof(name));
+	doggy->owner = malloc(sizeof(char) * (_strlen(owner) + 1)); /* +1 for null value at end */
 	if (!doggy->owner)
 	{
-		free(doggy->owner);
-		return (NULL);
-	}
-	/* set doggy's owner same as name */
-	_strcpy(doggy->owner, owner);
-
-	/* return NULL on failure */
-	if (!doggy->name || !doggy->age || !doggy->owner)
-	{
 		free(doggy->name);
-		free(doggy->owner);
 		free(doggy);
 		return (NULL);
 	}
+
+	/* set doggy's owner same as name */
+	_strcpy(doggy->owner, owner);
+
 	return (doggy);
 }
