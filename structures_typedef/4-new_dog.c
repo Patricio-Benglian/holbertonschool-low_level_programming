@@ -46,12 +46,22 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	/* allocate memory for doggy name. need to for strcpy idk why */
 	doggy->name = malloc(sizeof(name));
+	if (!doggy->name)
+	{
+		free(doggy->name);
+		return (NULL);
+	}
 	/* set doggy's name while making a copy? or something? i dont know */
 	_strcpy(doggy->name, name);
 	/* set doggy's age */
 	doggy->age = age;
 	/* allo memory for doggy owner. need to for strcpy idk why */
 	doggy->owner = malloc(sizeof(name));
+	if (!doggy->owner)
+	{
+		free(doggy->owner);
+		return (NULL);
+	}
 	/* set doggy's owner same as name */
 	_strcpy(doggy->owner, owner);
 
