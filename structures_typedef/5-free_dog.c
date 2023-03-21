@@ -3,8 +3,9 @@
 #include "dog.h"
 /**
  * free_dog - frees memory associated with dog struct
- * @d: address of 
+ * @d: address of dog struct
  */
+
 void free_dog(dog_t *d)
 {
 	if (d)
