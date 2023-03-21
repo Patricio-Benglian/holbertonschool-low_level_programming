@@ -1,6 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
+#include "main.h"
+
+/**
+ * *_strcpy - copies string pointed to by src
+ * @dest: recieved output of src
+ * @src: source of the copied string
+ * Return: returns Dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	char *point = dest;
+
+	while (*src)
+	{
+		*dest = *src;
+		src++;
+		dest++;
+	}
+	*dest = *src;
+	return (point);
+}
+
 /**
  * new_dog - creates a new dog
  * @name: name of the dog
@@ -22,17 +44,22 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(doggy);
 		return (NULL);
 	}
-
-	/* set doggy's name */
-	doggy->name = name;
+	/* allocate memory for doggy name. need to for strcpy idk why */
+	doggy->name = malloc(sizeof(name));
+	/* set doggy's name while making a copy? or something? i dont know */
+	_strcpy(doggy->name, name);
 	/* set doggy's age */
 	doggy->age = age;
-	/* set doggy's owner */
-	doggy->owner = owner;
+	/* allo memory for doggy owner. need to for strcpy idk why */
+	doggy->owner = malloc(sizeof(name));
+	/* set doggy's owner same as name */
+	_strcpy(doggy->owner, owner);
 
 	/* return NULL on failure */
 	if (!doggy->name || !doggy->age || !doggy->owner)
 	{
+		free(doggy->name);
+		free(doggy->owner);
 		free(doggy);
 		return (NULL);
 	}
