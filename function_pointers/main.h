@@ -59,3 +59,4 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 int *array_range(int min, int max);
 int main(void);
 void print_name(char *name, void (*f)(char *));
+void array_iterator(int *array, size_t size, void (*action)(int));
