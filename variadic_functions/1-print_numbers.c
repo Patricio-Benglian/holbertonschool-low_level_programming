@@ -13,17 +13,16 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i; /* iterator */
 	va_list args; /* makes a list of all the arguments */
 
-	/* if no separator, quit */
-	if (separator == NULL)
-		exit(0);
 	/* enables access to variadic func args */
 	va_start(args, n); /* n is parameter preceding first var param */
 
 	for (i = 0; i < n; i++) /* iterate n times (once ofr each arg) */
 	{
-		if (i != n - 1)
+		/* print number then separator unless its the last number */
+		if (i != n - 1 && separator != NULL)
 			printf("%d%s", va_arg(args, int), separator);
-		if (i == n - 1)
+		/* print only number if its the last one */
+		else
 			printf("%d", va_arg(args, int));
 	}
 	printf("\n");
