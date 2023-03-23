@@ -7,6 +7,7 @@
 
 int (*get_op_func(char *s))(int, int)
 {
+	/* array that associates operator with relevant function */
 	op_t ops[] = {
 	{"+", op_add},
 	{"-", op_sub},
@@ -16,6 +17,10 @@ int (*get_op_func(char *s))(int, int)
 	{NULL, NULL}
 	};
 	int i;
-
+	/* iterate through array comparing values */
+	for (i = 0; i < 5; i++)
+		if (s == *ops[i][0])
+			return (ops[i].f);
+	return(0);
 
 }
