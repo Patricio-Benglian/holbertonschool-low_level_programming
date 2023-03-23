@@ -16,11 +16,14 @@ int (*get_op_func(char *s))(int, int)
 	{"%", op_mod},
 	{NULL, NULL}
 	};
-	int i;
+	int i = 0;
 	/* iterate through array comparing values */
-	for (i = 0; i < 5; i++)
-		if (s == *ops[i][0])
-			return (ops[i].f);
-	return(0);
-
+	while (ops)
+	{
+		if (s = ops[i])
+			return (ops[i][1]);
+		i++;
+	}
+	printf("Error\n");
+	exit(99);
 }
