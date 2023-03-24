@@ -10,7 +10,7 @@
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i; /* iterator */
-	char* s; /* contains value of string */
+	char *s; /* contains value of string */
 	va_list args; /* makes a list of all the arguments */
 
 	/* enables access to variadic func args */
