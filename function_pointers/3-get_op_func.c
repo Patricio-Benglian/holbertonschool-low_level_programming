@@ -1,8 +1,11 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include "3-calc.h"
+#include <string.h>
 /**
  * get_op_func - performs the correct function based on the operator
  * @s: operator that is read
+ * Return: pointer to function
  */
 
 int (*get_op_func(char *s))(int, int)
@@ -17,11 +20,12 @@ int (*get_op_func(char *s))(int, int)
 	{NULL, NULL}
 	};
 	int i = 0;
+
 	/* iterate through array comparing values */
-	while (ops)
+	while (ops[i].op)
 	{
-		if (s = ops[i])
-			return (ops[i][1]);
+		if (!strcmp(s, ops[i].op))
+			return (ops[i].f);
 		i++;
 	}
 	printf("Error\n");

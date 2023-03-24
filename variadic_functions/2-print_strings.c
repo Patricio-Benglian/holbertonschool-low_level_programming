@@ -24,7 +24,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		}
 		/* print only string if its the last one */
 		else
+		{
 			printf("%s", va_arg(args, char*));
+		}
+		/* need to check for NULL strings but it breaks heavily when i do it */
 	}
 	printf("\n");
 }
