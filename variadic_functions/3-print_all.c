@@ -18,16 +18,24 @@ void print_all(const char * const format, ...)
 		{"f", aux_float},
 		{"s", aux_string},
 		{NULL, NULL},
-	}
+	};
 	int i = 0;
 
 	while (format)
+	{
 /* compares value of character in format string with the types for match */
+		while (types[i].type)
+		{
 		/* strcmp returns 0 on match. !strcmp returns 1 (true) */
-		if (!strcmp(format, types[i].type))
+			if (!strcmp(format, types[i].type))
+			{
 			/* runs corresponding aux func */
-			 types[i].p(va_copy(list, args)); 
-
+				 types[i].p(va_copy(list, args));
+			}
+		}
+		i++;
+		format++;
+	}
 }
 
 /**
@@ -36,7 +44,7 @@ void print_all(const char * const format, ...)
  * @arg: the character in question
  */
 
-void aux_char(char *list, arg)
+void aux_char(char *list)
 {
 	char temp = va_arg(list, char); /* holds value in va_arg */
 
@@ -49,7 +57,7 @@ void aux_char(char *list, arg)
  * @arg: the integer in question
  */
 
-void aux_int(char *list, arg)
+void aux_int(char *list)
 {
 	int temp = va_arg(list, int); /* holds value in va_arg */
 
@@ -62,7 +70,7 @@ void aux_int(char *list, arg)
  * @arg: the float in question
  */
 
-void aux_float(char *list, arg)
+void aux_float(char *list)
 {
 	float temp = va_arg(list, float); /* holds value in va_arg */
 
@@ -75,14 +83,14 @@ void aux_float(char *list, arg)
  * @arg: the string in question to print
  */
 
-void aux_string(char *list, *arg) /* maybe they should be not void, and return the value then print it idk */
+void aux_string(char *list) /* maybe they should be not void, and return the value then print it idk */
 {
 	char *temp = va_arg(list, char *); /* holds value in va_arg */
 
 	if (temp == NULL)
 	{
 		printf("(nil)");
-		return ();
+		return;
 	}
 	printf("%s", temp);
 }

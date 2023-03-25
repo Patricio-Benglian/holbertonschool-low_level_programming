@@ -3,7 +3,7 @@
 
 
 /* struct for print_all function */
-typedef struct printer
+typedef struct prints
 {
 	char *type;
 	void (*p)(list);
