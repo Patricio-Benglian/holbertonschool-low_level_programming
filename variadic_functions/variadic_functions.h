@@ -6,7 +6,7 @@
 typedef struct printer
 {
 	char *type;
-	int (*p)(list, aux);
+	void (*p)(list);
 } printer_t;
 
 /* prototypes */
