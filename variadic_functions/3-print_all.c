@@ -55,7 +55,7 @@ void aux_string(va_list args, char *separator) /* maybe they should be not void,
 
 	if (temp == NULL)
 	{
-		printf("(nil)");
+		printf("%s(nil)", separator);
 		return;
 	}
 	printf("%s%s", separator, temp);
@@ -80,7 +80,7 @@ void print_all(const char * const format, ...)
 	char *separator = "";
 
 	va_start(args, format);
-	while (format[i2] && format != NULL)
+	while (format != NULL && format[i2])
 	{
 /* compares value of character in format string with the types for match */
 		while (i < 4)
