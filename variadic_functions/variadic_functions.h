@@ -1,12 +1,14 @@
 #ifndef VARIADIC_H
 #define VARIADIC_H
 
+/* includes */
+#include <stdarg.h>
 
 /* struct for print_all function */
 typedef struct prints
 {
 	char *type;
-	void (*p)(list);
+	void (*p)(va_list args, char *separator);
 } printer_t;
 
 /* prototypes */

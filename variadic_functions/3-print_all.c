@@ -4,51 +4,16 @@
 #include "variadic_functions.h"
 
 /**
- * print_all - prints anything
- * @format: list of characters corresponding to vartype of respective arg list
- */
-
-void print_all(const char * const format, ...)
-{
-	void (*func)(char *list); /* points to relevant aux_func */
-	va_list args; /* makes list of all args */
-	printer_t types[] = {
-		{"c", aux_char},
-		{"i", aux_int},
-		{"f", aux_float},
-		{"s", aux_string},
-		{NULL, NULL},
-	};
-	int i = 0;
-
-	while (format)
-	{
-/* compares value of character in format string with the types for match */
-		while (types[i].type)
-		{
-		/* strcmp returns 0 on match. !strcmp returns 1 (true) */
-			if (!strcmp(format, types[i].type))
-			{
-			/* runs corresponding aux func */
-				 types[i].p(va_copy(list, args));
-			}
-		}
-		i++;
-		format++;
-	}
-}
-
-/**
  * aux_char - auxiliary function of main to print characters
  * @list: a copy of va_list from main
  * @arg: the character in question
  */
 
-void aux_char(char *list)
+void aux_char(va_list args, char *separator)
 {
-	char temp = va_arg(list, char); /* holds value in va_arg */
+	int temp = va_arg(args, int); /* holds value in va_arg */
 
-	printf("%c", temp);
+	printf("%s%c", separator, temp);
 }
 
 /**
@@ -57,11 +22,11 @@ void aux_char(char *list)
  * @arg: the integer in question
  */
 
-void aux_int(char *list)
+void aux_int(va_list args, char *separator)
 {
-	int temp = va_arg(list, int); /* holds value in va_arg */
+	int temp = va_arg(args, int); /* holds value in va_arg */
 
-	printf("%d", temp);
+	printf("%s%d", separator, temp);
 }
 
 /**
@@ -70,11 +35,12 @@ void aux_int(char *list)
  * @arg: the float in question
  */
 
-void aux_float(char *list)
+void aux_float(va_list args, char *separator)
 {
-	float temp = va_arg(list, float); /* holds value in va_arg */
+	/* float gets upgraded to double idk */
+	double temp = va_arg(args, double); /* holds value in va_arg */
 
-	printf("%f", temp);
+	printf("%s%f", separator, temp);
 }
 
 /**
@@ -83,14 +49,54 @@ void aux_float(char *list)
  * @arg: the string in question to print
  */
 
-void aux_string(char *list) /* maybe they should be not void, and return the value then print it idk */
+void aux_string(va_list args, char *separator) /* maybe they should be not void, and return the value then print it idk */
 {
-	char *temp = va_arg(list, char *); /* holds value in va_arg */
+	char *temp = va_arg(args, char *); /* holds value in va_arg */
 
 	if (temp == NULL)
 	{
 		printf("(nil)");
 		return;
 	}
-	printf("%s", temp);
+	printf("%s%s", separator, temp);
+}
+
+/**
+ * print_all - prints anything
+ * @format: list of characters corresponding to vartype of respective arg list
+ */
+
+void print_all(const char * const format, ...)
+{
+	va_list args; /* makes list of all args */
+	printer_t types[] = {
+		{"c", aux_char},
+		{"i", aux_int},
+		{"f", aux_float},
+		{"s", aux_string},
+		{NULL, NULL},
+	};
+	int i = 0, i2 = 0;
+	char *separator = "";
+
+	va_start(args, format);
+	while (format[i2] && format != NULL)
+	{
+/* compares value of character in format string with the types for match */
+		while (i < 4)
+		{
+		/* strcmp returns 0 on match. !strcmp returns 1 (true) */
+			if (format[i2] == *types[i].type)
+			{
+			/* runs corresponding aux func */
+			types[i].p(args, separator);
+			separator = ", ";
+			}
+			i++;
+		}
+		i = 0;
+		i2++;
+	}
+	printf("\n");
+	va_end(args);
 }
