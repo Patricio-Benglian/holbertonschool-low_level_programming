@@ -4,7 +4,12 @@
 /* includes */
 #include <stdarg.h>
 
-/* struct for print_all function */
+/**
+ * struct prints - struct for printing all var types
+ * @type: array that associates a vartype with a respective print function
+ * @p: function pointer that points to corresponding vartype print function
+ */
+
 typedef struct prints
 {
 	char *type;
