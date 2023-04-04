@@ -36,7 +36,7 @@ list_t *add_node(list_t **head, const char *str)
 	newNode = malloc(sizeof(list_t)); /* allocate mem for it */
 	if (!newNode) /* memory check */
 	{
-		free (newNode);
+		free(newNode);
 		return (0);
 	}
 	newNode->str = strdup(str);
