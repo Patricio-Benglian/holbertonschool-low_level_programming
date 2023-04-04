@@ -9,24 +9,17 @@
  */
 size_t print_list(const list_t *h)
 {
-	list_t curNode = *h; /* current node equals head node? */
 	int counter = 0; /* Node counter */
 
-	while (curNode.next != NULL) /* until last node */
+	while (h != NULL) /* until last node */
 	{
-		if (curNode.str == NULL) /* if string empty */
+		if (h->str == NULL) /* if string empty */
 			printf("[0] (nil)\n");
 		else
-			printf("[%i] %s\n", curNode.len, curNode.str);
+			printf("[%i] %s\n", h->len, h->str);
 
-		curNode = *curNode.next; /* node becomes pointed node */
+		h = h->next; /* node becomes pointed node */
 		counter++;
 	}
-	/* while loop above does not run last node, do it manually */
-	if (curNode.str == NULL) /* if string empty */
-		printf("[0] (nil)\n");
-	else
-		printf("[%i] %s\n", curNode.len, curNode.str);
-	counter++;
 	return (counter);
 }
