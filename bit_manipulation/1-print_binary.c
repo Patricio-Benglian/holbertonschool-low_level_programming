@@ -10,10 +10,11 @@ void print_binary(unsigned long int n)
 	/* shiftBit shifts bits to the right, getting final bit only */
 	/* value holds final bit for comparison */
 	/* printToggle only starts printing once nonzero found */
-	int shiftBit, value, printToggle = 0;
+	int shiftBit;
+	int value, printToggle = 0;
 
-	/* int stores 32 bits, shift all but last bit, then second last, etc */
-	for (shiftBit = 31; shiftBit >= 0; shiftBit--)
+	/* long stores 64 bits, shift all but 1st bit, 2nd, etc */
+	for (shiftBit = 63; shiftBit >= 0; shiftBit--)
 	{
 		value = n >> shiftBit;
 
