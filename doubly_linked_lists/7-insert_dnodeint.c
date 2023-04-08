@@ -12,7 +12,7 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *newNode, *temp = *h; /* node to insert */
-	unsigned int i; /* iterator */
+	unsigned int iterator; /* iterator */
 
 	newNode = malloc(sizeof(dlistint_t));
 	if (!newNode)
@@ -32,7 +32,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (newNode);
 	}
 	/* iterate to index position */
-	for (i = 1; i < idx; i++)
+	for (iterator = 1; iterator < idx; iterator++)
 		if (temp)
 			temp = temp->next;
 	/* check if we went outside list */
