@@ -22,14 +22,23 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	/* insert data */
 	newNode->n = n;
 
+	/* check if list exists */
+	if (!h)
+	{
+		*h = newNode;
+		return (newNode);
+	}
+
 	/* iterate to index position */
-	for (i = 1; i < idx; i++)
+	for (i = 0; i < idx - 1; i++)
 		if (temp)
 			temp = temp->next;
 
 	/* check if we went outside list */
 	if (!temp)
+	{
 		return (NULL);
+	}
 
 	/* rearrange pointers */
 	newNode->next = temp->next; /* newNode points to next */
