@@ -26,7 +26,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	/* iterate to index position */
 	for (iterator = 1; iterator < idx; iterator++)
-		if (temp->next)
+		if (temp)
 			temp = temp->next;
 	/* check if we went outside list */
 	if (!temp)
