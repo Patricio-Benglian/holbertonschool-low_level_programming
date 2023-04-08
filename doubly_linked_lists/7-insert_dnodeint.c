@@ -14,39 +14,36 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *newNode, *temp = *h; /* node to insert */
 	unsigned int i; /* iterator */
 
-	/* allocate mem */
 	newNode = malloc(sizeof(dlistint_t));
-	/* check if allocate worked */
 	if (!newNode)
 		return (NULL);
-	/* insert data */
 	newNode->n = n;
-
-	/* check if list exists */
 	if (!h)
 	{
 		*h = newNode;
 		return (*h);
 	}
-
+	if (idx == 0)
+	{
+		newNode->next = temp;
+		temp->prev = newNode;
+		temp = newNode;
+		return (newNode);
+	}
 	/* iterate to index position */
 	for (i = 1; i < idx; i++)
 		if (temp)
 			temp = temp->next;
-
 	/* check if we went outside list */
 	if (!temp)
 	{
 		return (NULL);
 	}
-
 	/* rearrange pointers */
 	newNode->next = temp->next; /* newNode points to next */
 	temp->next = newNode; /* previous points to newNode */
 	newNode->prev = temp; /* newNode points to prev */
-
 	if (newNode->next) /* if newNode has a next node */
 	newNode->next->prev = newNode; /* next points to newNode */
-
 	return (newNode);
 }
