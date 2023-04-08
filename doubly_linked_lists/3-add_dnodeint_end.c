@@ -19,12 +19,14 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		free(newNode);
 		return (NULL);
 	}
+	/* always set this so do at beginning i guess */
+	newNode->n = n;
+
 	/* check if list exists */
 	if (!*head)
 	{
 		*head = newNode; /* make head newNode for future adds */
 		newNode->prev = NULL;
-		newNode->next = NULL;
 		return (newNode);
 	}
 
@@ -34,7 +36,6 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	/* set data and pointers */
 	temp->next = newNode; /* point to new node at end of list */
-	newNode->n = n;
 	newNode->next = NULL;
 	newNode->prev = temp;
 
