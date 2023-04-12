@@ -6,12 +6,12 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *arr; /* each section of arr is = hash_table_t */
+	hash_table_t *arr = NULL; /* each section of arr is = hash_table_t */
 
 	/* size of hash table + amount of pointers to nodes needed */
 	arr = malloc(8 * size + sizeof(hash_table_t));
 	if (!arr)
-		return (0);
+		return (NULL);
 
 	return (arr);
 }
