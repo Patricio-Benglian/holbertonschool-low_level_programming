@@ -10,7 +10,5 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	arr = malloc(sizeof(arr) * size + 16); /* allo mem for arr ptr */
 	/* idk why it was allocated 16 bytes less than necessary */
-	if (!arr)
-		return (NULL);
 	return (arr);
 }
