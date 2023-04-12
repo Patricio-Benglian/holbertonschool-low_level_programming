@@ -11,11 +11,11 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	/* size of hash table + amount of pointers to nodes needed */
 	arr = malloc(sizeof(hash_table_t));
+	if (!arr)
+		return (NULL);
 	arr->size = size;
 	for (i = 0; i < size; i++)
-		arr->array = malloc(8 * size + sizeof(hash_table_t));
-/*	if (!arr)
-		return (NULL);*/
+		arr->array = malloc(8);
 
 	return (arr);
 }
