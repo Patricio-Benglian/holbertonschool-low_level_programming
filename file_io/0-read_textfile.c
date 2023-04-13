@@ -27,7 +27,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	/* output as standardoutput ? */
 	write(STDOUT_FILENO, buffer, count);
 	close(fd);
-	free (buffer);
+	free(buffer);
 
 	/* return amount read and printed */
 	return (count);
