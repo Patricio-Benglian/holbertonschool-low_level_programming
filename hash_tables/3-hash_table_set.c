@@ -22,12 +22,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (!ht)
 		return (0);
+
 	/* set values */
-	pNode->key = strdup(key);
+	pNode->key = (char *)key;
 	pNode->value = strdup(value);
 	pNode->next = NULL;
+
 	/* get hash and index for node */
 	pos = key_index((const unsigned char *)key, ht->size);
-	pNode = ht->array[pos];
+
+	/* check if index is already occupied? */
+	if (!ht->array[pos])
+		ht->array[pos] = pNode;
+	else
+	{
+		pNode->next = ht->array[pos];
+		ht->array[pos] = pNode;
+	}
+
 	return (1);
 }
