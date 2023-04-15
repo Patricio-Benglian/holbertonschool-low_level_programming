@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	do {
 		count = read(fd1, buffer, 1024);
 		if (count == -1)
-{	dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+{	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 	return (98);
 }
 		temp2 = write(fd2, buffer, count);
