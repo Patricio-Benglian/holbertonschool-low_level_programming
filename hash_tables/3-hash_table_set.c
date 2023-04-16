@@ -38,6 +38,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (strcmp(ht->array[pos]->key, key) == 0)
 		{
 			temp = ht->array[pos];
+			free(ht->array[pos]->value);
+			free(ht->array[pos]->key);
 			free(ht->array[pos]);
 			ht->array[pos] = pNode;
 			pNode->next = temp->next;
