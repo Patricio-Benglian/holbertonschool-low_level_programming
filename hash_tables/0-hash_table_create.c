@@ -14,8 +14,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (!arr)
 		return (NULL);
 	arr->size = size;
-	for (i = 0; i < size; i++)
-		arr->array = malloc(8);
+	arr->array = malloc(8 * size);
 
 	return (arr);
 }
