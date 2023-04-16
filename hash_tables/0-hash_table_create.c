@@ -7,7 +7,6 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *arr;
-	size_t i;
 
 	/* size of hash table + amount of pointers to nodes needed */
 	arr = malloc(sizeof(hash_table_t));
