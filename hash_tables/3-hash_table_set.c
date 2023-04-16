@@ -34,8 +34,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[pos] = pNode;
 	else /* if so */
 	{
-		/* if same key, overwrite */
-		if (ht->array[pos]->key == pNode->key)
+		/* if same key, overwrite *//* should prob check every node */
+		if (strcmp(ht->array[pos]->key, key) == 0)
 		{
 			temp = ht->array[pos];
 			free(ht->array[pos]);
@@ -47,6 +47,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		pNode->next = ht->array[pos];
 		ht->array[pos] = pNode;
 	}
-
 	return (1);
 }
