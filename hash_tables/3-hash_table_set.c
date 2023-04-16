@@ -9,7 +9,7 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *pNode; /* node to add */
+	hash_node_t *pNode, *temp; /* node to add */
 	unsigned long int pos; /* index position */
 
 	pNode = malloc(sizeof(hash_node_t));
@@ -18,9 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(pNode);
 		return (0);
 	}
-	if (!key)
-		return (0);
-	if (!ht)
+	if (!key || !ht)
 		return (0);
 
 	/* set values */
@@ -32,10 +30,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	pos = key_index((const unsigned char *)key, ht->size);
 
 	/* check if index is already occupied? */
-	if (!ht->array[pos])
+	if (!ht->array[pos]) /* if not */
 		ht->array[pos] = pNode;
-	else
+	else /* if so */
 	{
+		/* if same key, overwrite */
+		if (ht->array[pos]->key == pNode->key)
+		{
+			temp = ht->array[pos];
+			free(ht->array[pos]);
+			ht->array[pos] = pNode;
+			pNode->next = temp->next;
+		}
+		/* if synonym, chain */
+		else
 		pNode->next = ht->array[pos];
 		ht->array[pos] = pNode;
 	}
